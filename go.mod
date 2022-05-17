@@ -44,4 +44,4 @@ require (
 
 replace github.com/hyperledger/burrow => github.com/xuperchain/burrow v0.30.6-0.20211229032028-fbee6a05ab0f
 
-// replace github.com/xuperchain/xupercore => github.com/SuperconsensusMatrixchain/matrixcore v0.0.0-20220408065941-44dc47704130
+replace github.com/xuperchain/xupercore => github.com/SuperconsensusMatrixchain/matrixcore v0.0.0-20220517085749-b0224ce9ba6f
