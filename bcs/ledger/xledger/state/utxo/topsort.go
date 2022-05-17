@@ -1,7 +1,7 @@
 package utxo
 
 import (
-	pb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
 )
 
 //交易依赖关系图

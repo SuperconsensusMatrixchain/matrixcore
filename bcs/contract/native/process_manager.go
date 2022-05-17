@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge"
-	"github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 type processManager struct {

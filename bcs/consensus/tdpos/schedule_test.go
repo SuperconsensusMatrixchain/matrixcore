@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	common "github.com/superconsensus/matrixcore/kernel/consensus/base/common"
-	kmock "github.com/superconsensus/matrixcore/kernel/consensus/mock"
+	common "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/common"
+	kmock "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/mock"
 )
 
 func Test(t *testing.T) {

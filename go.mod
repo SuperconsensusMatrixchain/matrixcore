@@ -1,4 +1,4 @@
-module github.com/superconsensus/matrixcore
+module github.com/SuperconsensusMatrixchain/matrixcore
 
 go 1.14
 
@@ -44,4 +44,4 @@ require (
 
 replace github.com/hyperledger/burrow => github.com/xuperchain/burrow v0.30.6-0.20211229032028-fbee6a05ab0f
 
-replace github.com/xuperchain/xupercore => github.com/superconsensus/matrixcore v1.0.3-0.20220228084652-c1d605f3707c
+// replace github.com/xuperchain/xupercore => github.com/SuperconsensusMatrixchain/matrixcore v0.0.0-20220408065941-44dc47704130

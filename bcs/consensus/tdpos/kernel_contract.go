@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"strings"
 
-	common "github.com/superconsensus/matrixcore/kernel/consensus/base/common"
-	"github.com/superconsensus/matrixcore/kernel/contract/proposal/utils"
+	common "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/proposal/utils"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
 )
 
 // 本文件实现tdpos的原Run方法，现全部移至三代合约

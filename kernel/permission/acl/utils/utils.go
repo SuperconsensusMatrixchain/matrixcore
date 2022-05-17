@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/ptree"
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/rule"
-	crypto_client "github.com/superconsensus/matrixcore/lib/crypto/client"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/ptree"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/rule"
+	crypto_client "github.com/SuperconsensusMatrixchain/matrixcore/lib/crypto/client"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/base"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/base"
 )
 
 func IdentifyAK(akuri string, sign *pb.SignatureInfo, msg []byte) (bool, error) {

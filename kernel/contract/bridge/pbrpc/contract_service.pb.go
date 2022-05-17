@@ -6,8 +6,8 @@ package pbrpc
 import (
 	context "context"
 	fmt "fmt"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pb"
 	proto "github.com/golang/protobuf/proto"
-	pb "github.com/superconsensus/matrixcore/kernel/contract/bridge/pb"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

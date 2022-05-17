@@ -6,9 +6,9 @@ package xchainpb
 import (
 	context "context"
 	fmt "fmt"
+	xldgpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	protos "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	proto "github.com/golang/protobuf/proto"
-	xldgpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	protos "github.com/superconsensus/matrixcore/protos"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

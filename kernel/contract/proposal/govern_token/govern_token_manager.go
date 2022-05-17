@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/proposal/utils"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	"github.com/golang/protobuf/proto"
 	"github.com/shopspring/decimal"
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/contract/proposal/utils"
-	pb "github.com/superconsensus/matrixcore/protos"
 )
 
 // Manager manages all gov releated data, providing read/write interface
@@ -196,7 +196,7 @@ func (mgr *Manager) SyncCheckBonus(ctx contract.KContext, height int64) (*big.In
 			return reward, nil
 		} else {
 			//fmt.Println("非同步", "请求中的高度参数", height, "当前高度", ledger.GetMeta().TrunkHeight)
-			mgr.Ctx.XLog.Warn("V__非同步，提现高度出错","计算奖励", reward, "请求中的高度参数", height, "当前高度", ledger.GetMeta().TrunkHeight)
+			mgr.Ctx.XLog.Warn("V__非同步，提现高度出错", "计算奖励", reward, "请求中的高度参数", height, "当前高度", ledger.GetMeta().TrunkHeight)
 			mgr.Ctx.XLog.Warn("V__分红提现表", "discountQueue", queue, "bonusPools", pools)
 			return nil, errors.New("V__操作异常，请刷新页面后重试")
 		}
@@ -322,7 +322,7 @@ func (mgr *Manager) BonusObtain(ctx contract.KContext) (*contract.Response, erro
 		// 最后一次提现的高度
 		oldHeight, _ := big.NewInt(0).SetString(string(initiatorBytes), 10)
 		lastHeight := oldHeight.Int64()
-		if realHeight.Int64() - lastHeight == 0 {
+		if realHeight.Int64()-lastHeight == 0 {
 			return nil, errors.New("V__操作过于频繁，请稍后重试")
 		} else if lastHeight > realHeight.Int64() {
 			return nil, errors.New("V__交易请求超过当前区块高度，无法处理")

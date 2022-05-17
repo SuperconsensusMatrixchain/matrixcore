@@ -3,7 +3,7 @@ package tx
 import (
 	"errors"
 
-	pb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
 )
 
 // Node tx wrapper.

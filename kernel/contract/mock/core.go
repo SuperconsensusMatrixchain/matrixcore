@@ -1,10 +1,10 @@
 package mock
 
 import (
-	"github.com/superconsensus/matrixcore/bcs/ledger/xledger/state"
-	"github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge/pb"
-	"github.com/superconsensus/matrixcore/kernel/ledger"
+	"github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/state"
+	"github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/ledger"
 )
 
 type fakeChainCore struct {

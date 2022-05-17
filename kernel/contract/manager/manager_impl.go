@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/superconsensus/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge"
-	"github.com/superconsensus/matrixcore/kernel/contract/sandbox"
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/utils"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/sandbox"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/utils"
 )
 
 type managerImpl struct {

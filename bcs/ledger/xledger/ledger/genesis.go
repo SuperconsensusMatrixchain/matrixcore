@@ -7,8 +7,8 @@ import (
 	"math/big"
 	"strconv"
 
-	"github.com/superconsensus/matrixcore/lib/cache"
-	"github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/cache"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 // awardCacheSize system award cache, in avoid of double computing

@@ -6,10 +6,10 @@ import (
 	"math/big"
 	"strconv"
 
+	"github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/tx"
+	lpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	"github.com/golang/protobuf/proto"
-	"github.com/superconsensus/matrixcore/bcs/ledger/xledger/tx"
-	lpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	"github.com/superconsensus/matrixcore/protos"
 )
 
 func (t *Miner) GenerateVoteAward(address string, remainAward *big.Int) ([]*lpb.Transaction, error) {

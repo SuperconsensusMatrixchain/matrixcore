@@ -2,7 +2,7 @@
 package eccdefault
 
 import (
-	"github.com/superconsensus/matrixcore/lib/crypto/client/base"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/crypto/client/base"
 	"github.com/xuperchain/crypto/client/service/xchain"
 )
 

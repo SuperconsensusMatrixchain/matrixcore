@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/superconsensus/matrixcore/kernel/common/xcontext"
-	"github.com/superconsensus/matrixcore/kernel/consensus"
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/kernel/consensus/def"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xcontext"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/def"
 )
 
 // 本次single改造支持single的升级，即Miner地址可变

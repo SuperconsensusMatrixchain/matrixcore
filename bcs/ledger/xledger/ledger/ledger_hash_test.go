@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"testing"
 
-	pb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	"github.com/superconsensus/matrixcore/lib/crypto/hash"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/crypto/hash"
 )
 
 func TestMerkleHash(t *testing.T) {

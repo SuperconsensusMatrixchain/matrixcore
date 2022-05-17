@@ -1,11 +1,12 @@
 package native
 
 import (
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/protos"
 	"os/exec"
 	"testing"
 	"time"
+
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 func TestCommandNotFound(t *testing.T) {

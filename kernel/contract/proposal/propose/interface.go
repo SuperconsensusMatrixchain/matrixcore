@@ -1,7 +1,7 @@
 package propose
 
 import (
-	pb "github.com/superconsensus/matrixcore/protos"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 type ProposeManager interface {

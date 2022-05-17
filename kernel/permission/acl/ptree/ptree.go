@@ -3,8 +3,8 @@ package ptree
 import (
 	"strings"
 
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/base"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/base"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 // ValidateStatus define the validation status of a perm node

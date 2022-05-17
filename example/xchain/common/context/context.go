@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/superconsensus/matrixcore/example/xchain/common/def"
-	"github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	"github.com/superconsensus/matrixcore/lib/timer"
+	"github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/def"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/timer"
 )
 
 const (

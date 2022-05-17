@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	"github.com/superconsensus/matrixcore/kernel/mock"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	"github.com/superconsensus/matrixcore/protos"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/mock"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 var sum = 1000

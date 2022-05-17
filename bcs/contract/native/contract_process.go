@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge/pb"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge/pbrpc"
-	"github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pbrpc"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	log15 "github.com/xuperchain/log15"
 
 	"google.golang.org/grpc"

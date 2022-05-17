@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/utils"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/utils"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 func updateThresholdWithDel(ctx contract.KContext, aksWeight map[string]float64, accountName string) error {

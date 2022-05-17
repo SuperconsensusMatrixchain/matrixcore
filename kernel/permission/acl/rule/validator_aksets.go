@@ -3,8 +3,8 @@ package rule
 import (
 	"errors"
 
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/ptree"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/ptree"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 // AKSetsValidator is Valiator for AkSets permission model

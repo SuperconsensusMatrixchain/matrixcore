@@ -7,11 +7,11 @@ import (
 	"reflect"
 	"strings"
 
-	sctx "github.com/superconsensus/matrixcore/example/xchain/common/context"
-	pb "github.com/superconsensus/matrixcore/example/xchain/common/xchainpb"
-	ecom "github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	"github.com/superconsensus/matrixcore/lib/utils"
+	sctx "github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/context"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/xchainpb"
+	ecom "github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/utils"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/peer"

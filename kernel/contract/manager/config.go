@@ -3,8 +3,8 @@ package manager
 import (
 	"fmt"
 
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
 	"github.com/spf13/viper"
-	"github.com/superconsensus/matrixcore/kernel/contract"
 )
 
 const (

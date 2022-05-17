@@ -5,7 +5,7 @@ import (
 
 	"github.com/hyperledger/burrow/crypto"
 
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge"
 )
 
 func TestNewStateManager(t *testing.T) {

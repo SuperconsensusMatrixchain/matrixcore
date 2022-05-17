@@ -5,8 +5,8 @@ import (
 	"sort"
 	"testing"
 
-	pb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	"github.com/superconsensus/matrixcore/protos"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 // 无环case

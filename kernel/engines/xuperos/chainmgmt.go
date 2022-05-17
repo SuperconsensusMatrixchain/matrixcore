@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
-	"github.com/superconsensus/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 )
 
 // ChainMgmtImpl 用于管理链操作

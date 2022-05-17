@@ -6,9 +6,9 @@ import (
 	"sort"
 	"time"
 
-	common "github.com/superconsensus/matrixcore/kernel/consensus/base/common"
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/lib/logs"
+	common "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/common"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 )
 
 // tdposSchedule 实现了ProposerElectionInterface接口，接口定义了proposers操作

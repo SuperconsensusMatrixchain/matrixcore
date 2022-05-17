@@ -5,10 +5,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/base"
-	actx "github.com/superconsensus/matrixcore/kernel/permission/acl/context"
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/utils"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/base"
+	actx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/utils"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 // Manager manages all ACL releated data, providing read/write interface for ACL table

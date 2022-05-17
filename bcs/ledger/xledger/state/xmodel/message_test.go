@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"testing"
 
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	"github.com/golang/protobuf/proto"
-	pb "github.com/superconsensus/matrixcore/protos"
 )
 
 func TestMarshalMessages(t *testing.T) {

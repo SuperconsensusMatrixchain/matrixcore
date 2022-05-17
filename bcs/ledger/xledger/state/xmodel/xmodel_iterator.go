@@ -1,8 +1,8 @@
 package xmodel
 
 import (
-	kledger "github.com/superconsensus/matrixcore/kernel/ledger"
-	"github.com/superconsensus/matrixcore/lib/storage/kvdb"
+	kledger "github.com/SuperconsensusMatrixchain/matrixcore/kernel/ledger"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/storage/kvdb"
 )
 
 // XMIterator data structure for XModel Iterator

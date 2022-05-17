@@ -1,7 +1,7 @@
 package consensus
 
 import (
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
 )
 
 // ConsensusInterface 定义了一个共识实例需要实现的接口，用于bcs具体共识的实现

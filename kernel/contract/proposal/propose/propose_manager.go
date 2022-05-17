@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	pb "github.com/superconsensus/matrixcore/protos"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 
-	"github.com/superconsensus/matrixcore/kernel/contract/proposal/utils"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/proposal/utils"
 )
 
 // Manager manages all timer releated data, providing read/write interface

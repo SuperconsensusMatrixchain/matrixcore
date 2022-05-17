@@ -1,11 +1,11 @@
 package xuperos
 
 import (
-	lpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	xctx "github.com/superconsensus/matrixcore/kernel/common/xcontext"
-	"github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
-	"github.com/superconsensus/matrixcore/kernel/network/p2p"
-	"github.com/superconsensus/matrixcore/protos"
+	lpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	xctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xcontext"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/network/p2p"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 func (t *NetEvent) GetBlock(ctx xctx.XContext, request *protos.XuperMessage) (*lpb.InternalBlock, error) {

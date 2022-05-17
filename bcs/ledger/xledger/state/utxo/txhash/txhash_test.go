@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	crypto_client "github.com/SuperconsensusMatrixchain/matrixcore/lib/crypto/client"
 	"github.com/golang/protobuf/proto"
-	pb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	crypto_client "github.com/superconsensus/matrixcore/lib/crypto/client"
 )
 
 var (

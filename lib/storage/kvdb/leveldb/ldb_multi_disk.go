@@ -1,7 +1,7 @@
 package leveldb
 
 import (
-	"github.com/superconsensus/matrixcore/lib/storage/mstorage"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/storage/mstorage"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/errors"
 	"github.com/syndtr/goleveldb/leveldb/filter"

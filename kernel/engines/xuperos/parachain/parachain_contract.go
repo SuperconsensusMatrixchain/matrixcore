@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/superconsensus/matrixcore/bcs/ledger/xledger/ledger"
-	"github.com/superconsensus/matrixcore/bcs/ledger/xledger/utils"
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
-	"github.com/superconsensus/matrixcore/protos"
 	"strconv"
+
+	"github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/ledger"
+	"github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/utils"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 var (
@@ -22,7 +23,7 @@ var (
 	ErrBcNameEmpty      = errors.New("block chain name is empty")
 	ErrBcDataEmpty      = errors.New("first block data is empty")
 	ErrAdminEmpty       = errors.New("no administrator")
-	ErrMembersEmpty		= errors.New("成员参数members不能为空")
+	ErrMembersEmpty     = errors.New("成员参数members不能为空")
 )
 
 const (
@@ -33,8 +34,8 @@ const (
 
 	paraChainEventName  = "EditParaGroups"
 	genesisConfigPrefix = "$G_"
-	historyMsgPrefix	= "$H_"			// 历史消息表前缀
-	expiredLimit		= 3600*24*3		// 单位秒。消息过期时限，默认3天
+	historyMsgPrefix    = "$H_"         // 历史消息表前缀
+	expiredLimit        = 3600 * 24 * 3 // 单位秒。消息过期时限，默认3天
 )
 
 type paraChainContract struct {
@@ -152,8 +153,8 @@ func (p *paraChainContract) createChain(ctx contract.KContext) (*contract.Respon
 		GroupID:    bcName,
 		Admin:      []string{ctx.Initiator()},
 		Identities: nil,
-		Invites:	nil,
-		Applies:	nil,
+		Invites:    nil,
+		Applies:    nil,
 	}
 	if bcGroup != nil {
 		group = bcGroup
@@ -286,20 +287,20 @@ func (p *paraChainContract) inviteMembers(ctx contract.KContext) (*contract.Resp
 	}
 	for _, invite := range tmpGroup.Identities {
 		if isContain(chainGroup.Identities, invite) {
-			return newContractErrResponse(internalServerErr, invite + "已经在成员中"), errors.New(invite + "已经在成员中")
+			return newContractErrResponse(internalServerErr, invite+"已经在成员中"), errors.New(invite + "已经在成员中")
 		}
 		inviteValue, ok := chainGroup.Invites[invite]
 		if ok {
-			if nowTime - inviteValue <= expiredLimit {
-				return newContractErrResponse(internalServerErr, invite + "已经邀请过，等待对方处理"), errors.New(invite + "已经邀请过，等待对方处理")
+			if nowTime-inviteValue <= expiredLimit {
+				return newContractErrResponse(internalServerErr, invite+"已经邀请过，等待对方处理"), errors.New(invite + "已经邀请过，等待对方处理")
 			}
 			// 过期的邀请信息再覆盖
 			chainGroup.Invites[invite] = nowTime
 		}
 		applyValue, ok := chainGroup.Applies[invite]
 		if ok {
-			if nowTime - applyValue <= expiredLimit {
-				return newContractErrResponse(internalServerErr, invite + "在申请表中，直接同意即可"), errors.New(invite + "在申请表中，直接同意即可")
+			if nowTime-applyValue <= expiredLimit {
+				return newContractErrResponse(internalServerErr, invite+"在申请表中，直接同意即可"), errors.New(invite + "在申请表中，直接同意即可")
 			}
 		}
 		// 添加邀请
@@ -309,10 +310,10 @@ func (p *paraChainContract) inviteMembers(ctx contract.KContext) (*contract.Resp
 		chainGroup.Invites[invite] = nowTime
 		// 历史记录
 		historyMsg.Invites = append(historyMsg.Invites, Invite{
-			Inviter: ctx.Initiator(),
+			Inviter:  ctx.Initiator(),
 			Invitees: invite,
-			When: nowTime,
-			Result: 01, // waiting for handling
+			When:     nowTime,
+			Result:   01, // waiting for handling
 		})
 	}
 
@@ -328,7 +329,7 @@ func (p *paraChainContract) inviteMembers(ctx contract.KContext) (*contract.Resp
 	if err != nil {
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
-	if err := ctx.Put(ParaChainKernelContract, []byte(historyMsgPrefix + historyMsg.Name), rawBytes); err != nil {
+	if err := ctx.Put(ParaChainKernelContract, []byte(historyMsgPrefix+historyMsg.Name), rawBytes); err != nil {
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
 
@@ -350,7 +351,7 @@ func (p paraChainContract) inviteHandle(ctx contract.KContext) (*contract.Respon
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
 	agree, ok := ctx.Args()["agree"]
-	if !(ok && ( string(agree) == "yes" || string(agree) == "no" )) {
+	if !(ok && (string(agree) == "yes" || string(agree) == "no")) {
 		return newContractErrResponse(internalServerErr, "参数agree缺失或无效"), errors.New("参数agree缺失或无效")
 	}
 	if isContain(chainGroup.Identities, ctx.Initiator()) {
@@ -368,7 +369,7 @@ func (p paraChainContract) inviteHandle(ctx contract.KContext) (*contract.Respon
 	if e != nil {
 		return nil, e
 	}
-	if nowTime - value >= expiredLimit {
+	if nowTime-value >= expiredLimit {
 		fmt.Println("nowTime", nowTime, value, nowTime-value)
 		return newContractErrResponse(internalServerErr, "邀请信息已过期，不能处理"), errors.New("邀请信息已过期，不能处理")
 	}
@@ -379,11 +380,11 @@ func (p paraChainContract) inviteHandle(ctx contract.KContext) (*contract.Respon
 	}
 	// 找出对应的申请信息
 	for i, invite := range historyMsg.Invites {
-		if invite.When == value && invite.Invitees == ctx.Initiator(){ // 时间戳对上且被邀请人是自己
+		if invite.When == value && invite.Invitees == ctx.Initiator() { // 时间戳对上且被邀请人是自己
 			if string(agree) == "yes" {
 				historyMsg.Invites[i].Result = 02 // 02-passed
 				break
-			}else{
+			} else {
 				historyMsg.Invites[i].Result = 03 // 03-reject
 				break
 			}
@@ -459,7 +460,7 @@ func (p *paraChainContract) removeMembers(ctx contract.KContext) (*contract.Resp
 		return newContractErrResponse(internalServerErr, ErrMembersEmpty.Error()), ErrMembersEmpty // error
 	}
 	// 管理员才能移除成员
-	if !isContain(chainGroup.Admin, ctx.Initiator()) && !isContain(chainGroup.SecAdmin, ctx.Initiator()){
+	if !isContain(chainGroup.Admin, ctx.Initiator()) && !isContain(chainGroup.SecAdmin, ctx.Initiator()) {
 		return newContractErrResponse(unAuthorized, ErrUnAuthorized.Error()), ErrUnAuthorized
 	}
 
@@ -475,8 +476,8 @@ func (p *paraChainContract) removeMembers(ctx contract.KContext) (*contract.Resp
 		afterRm, flag := removeItem(chainGroup.Identities, identity)
 		if flag {
 			chainGroup.Identities = afterRm
-		}else {
-			return newContractErrResponse(internalServerErr, "移除失败，" + identity + "不是成员"), errors.New("移除失败，" + identity + "不是成员")
+		} else {
+			return newContractErrResponse(internalServerErr, "移除失败，"+identity+"不是成员"), errors.New("移除失败，" + identity + "不是成员")
 		}
 	}
 
@@ -486,8 +487,8 @@ func (p *paraChainContract) removeMembers(ctx contract.KContext) (*contract.Resp
 			afterRm, flag := removeItem(chainGroup.SecAdmin, s)
 			if flag {
 				chainGroup.SecAdmin = afterRm
-			}else {
-				return newContractErrResponse(internalServerErr, "移除失败，" + s + "不是成员"), errors.New("移除失败，" + s + "不在管理员中")
+			} else {
+				return newContractErrResponse(internalServerErr, "移除失败，"+s+"不是成员"), errors.New("移除失败，" + s + "不在管理员中")
 			}
 		}
 	}
@@ -556,34 +557,34 @@ func (p *paraChainContract) parseArgs(args map[string][]byte) (string, string, *
 
 //////////// Group ///////////
 type Group struct {
-	GroupID    string   `json:"name,omitempty"`
-	Admin      []string `json:"admin,omitempty"` 		// 创链者。为兼容旧版仍使用切片
-	SecAdmin   []string `json:"sec_admin,omitempty"` 	// Secondary administrator. 二级管理员，同级别之间不能互相管理
-	Identities []string `json:"identities,omitempty"`	// 正式成员表
-	Invites	   map[string]int64 `json:"invites,omitempty"`	// 邀请表 key:受邀人address value:邀请时间戳（对同一个邀请对象只保留最新的记录，即邀请过期后再邀请相同用户时会覆盖旧消息——每次邀请成功都会写记录到History表）
-	Applies    map[string]int64 `json:"applies,omitempty"`	// 申请表 同上 handle时nowTime-map[address] >= 阈值(expiredLimit秒)时不能处理
+	GroupID    string           `json:"name,omitempty"`
+	Admin      []string         `json:"admin,omitempty"`      // 创链者。为兼容旧版仍使用切片
+	SecAdmin   []string         `json:"sec_admin,omitempty"`  // Secondary administrator. 二级管理员，同级别之间不能互相管理
+	Identities []string         `json:"identities,omitempty"` // 正式成员表
+	Invites    map[string]int64 `json:"invites,omitempty"`    // 邀请表 key:受邀人address value:邀请时间戳（对同一个邀请对象只保留最新的记录，即邀请过期后再邀请相同用户时会覆盖旧消息——每次邀请成功都会写记录到History表）
+	Applies    map[string]int64 `json:"applies,omitempty"`    // 申请表 同上 handle时nowTime-map[address] >= 阈值(expiredLimit秒)时不能处理
 }
 
 // 邀请记录
 type Invite struct {
-	Inviter		string 	`json:"inviter,omitempty"`	// 邀请人
-	Invitees	string	`json:"invitees,omitempty"`	// 被邀请人
-	When		int64	`json:"when,omitempty"`		// 邀请时间戳
-	Result		int64	`json:"result,omitempty"`	// 结果 01-待处理（可能过期，具体由getHistory时用when与now判断，04-过期），02-通过，03-拒绝
+	Inviter  string `json:"inviter,omitempty"`  // 邀请人
+	Invitees string `json:"invitees,omitempty"` // 被邀请人
+	When     int64  `json:"when,omitempty"`     // 邀请时间戳
+	Result   int64  `json:"result,omitempty"`   // 结果 01-待处理（可能过期，具体由getHistory时用when与now判断，04-过期），02-通过，03-拒绝
 }
 
 // 申请记录
 type Apply struct {
-	Applicant	string	`json:"applicant,omitempty"`// 申请人
-	When		int64	`json:"when,omitempty"`		// 申请时间戳
-	Result		int64	`json:"result,omitempty"`	// 结果 01-待处理（可能过期，具体由getHistory时用when与now判断，04-过期），02-通过，03-拒绝
+	Applicant string `json:"applicant,omitempty"` // 申请人
+	When      int64  `json:"when,omitempty"`      // 申请时间戳
+	Result    int64  `json:"result,omitempty"`    // 结果 01-待处理（可能过期，具体由getHistory时用when与now判断，04-过期），02-通过，03-拒绝
 }
 
 // 关于历史邀请/申请记录的消息表（即退出链与管理员移除成员时不会更新此表）
 type History struct {
-	Name 	string		`json:"name,omitempty"`
-	Invites []Invite	`json:"invites,omitempty"` // 邀请记录
-	Applies []Apply		`json:"applies,omitempty"` // 申请记录
+	Name    string   `json:"name,omitempty"`
+	Invites []Invite `json:"invites,omitempty"` // 邀请记录
+	Applies []Apply  `json:"applies,omitempty"` // 申请记录
 }
 
 // methodEditGroup 控制平行链对应的权限管理，被称为平行链群组or群组，旨在向外提供平行链权限信息
@@ -716,13 +717,13 @@ func (p *paraChainContract) joinApply(ctx contract.KContext) (*contract.Response
 	}
 	value, ok := chainGroup.Invites[ctx.Initiator()] //对于过期的邀请可以继续申请加入
 	if ok {
-		if nowTime - value <= expiredLimit {
+		if nowTime-value <= expiredLimit {
 			return newContractErrResponse(internalServerErr, "已经在被邀请表中，直接处理通过即可"), errors.New("已经在被邀请表中，直接处理通过即可")
 		}
 	}
 	value, ok = chainGroup.Applies[ctx.Initiator()]
 	if ok {
-		if nowTime - value <= expiredLimit {
+		if nowTime-value <= expiredLimit {
 			return newContractErrResponse(internalServerErr, "已经申请过了，等待管理员审核"), errors.New("已经申请过了，等待管理员审核")
 		}
 	}
@@ -736,8 +737,8 @@ func (p *paraChainContract) joinApply(ctx contract.KContext) (*contract.Response
 	}
 	historyMsg.Applies = append(historyMsg.Applies, Apply{
 		Applicant: ctx.Initiator(),
-		When: nowTime,
-		Result: 01,
+		When:      nowTime,
+		Result:    01,
 	})
 
 	// 写回
@@ -752,7 +753,7 @@ func (p *paraChainContract) joinApply(ctx contract.KContext) (*contract.Response
 	if err != nil {
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
-	if err := ctx.Put(ParaChainKernelContract, []byte(historyMsgPrefix + historyMsg.Name), rawBytes); err != nil {
+	if err := ctx.Put(ParaChainKernelContract, []byte(historyMsgPrefix+historyMsg.Name), rawBytes); err != nil {
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
 
@@ -778,7 +779,7 @@ func (p *paraChainContract) joinHandle(ctx contract.KContext) (*contract.Respons
 	}
 
 	applicantsBytes := ctx.Args()["applicants"] // 申请人	["aa", "bb", "cc"]
-	agreesBytes := ctx.Args()["agrees"]			// 是否同意	["no", "yes", "yes"]
+	agreesBytes := ctx.Args()["agrees"]         // 是否同意	["no", "yes", "yes"]
 	if applicantsBytes == nil {
 		return newContractErrResponse(internalServerErr, "处理申请人参数applicants缺失"), errors.New("处理申请人参数applicants缺失")
 	}
@@ -807,12 +808,12 @@ func (p *paraChainContract) joinHandle(ctx contract.KContext) (*contract.Respons
 	needRefresh := false // 如果同意申请节点中的任意一个加入网络的话，就需要refresh
 	for i, apply := range tmpGroup.Identities {
 		if isContain(chainGroup.Identities, apply) {
-			return newContractErrResponse(internalServerErr, apply + "已经是联盟成员"), errors.New(apply + "已经是联盟成员")// todo sync? 多个管理员同时对一个申请处理的情况
+			return newContractErrResponse(internalServerErr, apply+"已经是联盟成员"), errors.New(apply + "已经是联盟成员") // todo sync? 多个管理员同时对一个申请处理的情况
 		}
 		// 处理申请表
 		value, ok := chainGroup.Applies[apply]
 		if !ok {
-			return newContractErrResponse(internalServerErr, apply + "不在申请列表中"), errors.New(apply + "不在申请列表中")
+			return newContractErrResponse(internalServerErr, apply+"不在申请列表中"), errors.New(apply + "不在申请列表中")
 		}
 
 		// 过期不能处理
@@ -820,7 +821,7 @@ func (p *paraChainContract) joinHandle(ctx contract.KContext) (*contract.Respons
 		if e != nil {
 			return nil, e
 		}
-		if nowTime - value >= expiredLimit {
+		if nowTime-value >= expiredLimit {
 			return newContractErrResponse(internalServerErr, "部分申请已经过期，无法处理"), errors.New("部分申请已经过期，无法处理")
 		}
 		// 已经处理的消息删除（对于Group表）
@@ -838,9 +839,9 @@ func (p *paraChainContract) joinHandle(ctx contract.KContext) (*contract.Respons
 			// 添加到成员表
 			chainGroup.Identities = append(chainGroup.Identities, apply)
 			historyMsg.Applies[index].Result = 02 // passed
-		}else if tmpGroup.SecAdmin[i] == "no" {
+		} else if tmpGroup.SecAdmin[i] == "no" {
 			historyMsg.Applies[index].Result = 03 // reject
-		}else {
+		} else {
 			return newContractErrResponse(internalServerErr, "部分agree参数错误"), errors.New("部分agree参数错误")
 		}
 	}
@@ -857,7 +858,7 @@ func (p *paraChainContract) joinHandle(ctx contract.KContext) (*contract.Respons
 	if err != nil {
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
-	if err := ctx.Put(ParaChainKernelContract, []byte(historyMsgPrefix + historyMsg.Name), rawBytes); err != nil {
+	if err := ctx.Put(ParaChainKernelContract, []byte(historyMsgPrefix+historyMsg.Name), rawBytes); err != nil {
 		return newContractErrResponse(internalServerErr, err.Error()), err
 	}
 
@@ -965,7 +966,7 @@ func (p *paraChainContract) adminManage(ctx contract.KContext) (*contract.Respon
 	}
 	for _, identity := range upsGroup.Identities {
 		if isContain(chainGroup.SecAdmin, identity) {
-			return newContractErrResponse(internalServerErr, identity + "已经是管理员"), errors.New(identity + "已经是管理员")
+			return newContractErrResponse(internalServerErr, identity+"已经是管理员"), errors.New(identity + "已经是管理员")
 		}
 		// 如果没有问题的话，循环结束时upsGroup中的元素就全部加到chainGroup中的二级管理员了
 		chainGroup.SecAdmin = append(chainGroup.SecAdmin, identity)
@@ -973,8 +974,8 @@ func (p *paraChainContract) adminManage(ctx contract.KContext) (*contract.Respon
 		afterRm, flag := removeItem(chainGroup.Identities, identity)
 		if flag {
 			chainGroup.Identities = afterRm
-		}else {
-			return newContractErrResponse(internalServerErr, identity + "不是联盟成员"), errors.New(identity + "不是联盟成员")
+		} else {
+			return newContractErrResponse(internalServerErr, identity+"不是联盟成员"), errors.New(identity + "不是联盟成员")
 		}
 	}
 
@@ -987,15 +988,15 @@ func (p *paraChainContract) adminManage(ctx contract.KContext) (*contract.Respon
 	}
 	for _, downsUsr := range downsGroup.SecAdmin {
 		if isContain(chainGroup.Identities, downsUsr) {
-			return newContractErrResponse(internalServerErr, downsUsr + "已经是联盟成员"), errors.New(downsUsr + "已经是联盟成员")
+			return newContractErrResponse(internalServerErr, downsUsr+"已经是联盟成员"), errors.New(downsUsr + "已经是联盟成员")
 		}
 		chainGroup.Identities = append(chainGroup.Identities, downsUsr)
 		// 移除管理员身份
 		afterRm, flag := removeItem(chainGroup.SecAdmin, downsUsr)
 		if flag {
 			chainGroup.SecAdmin = afterRm
-		}else {
-			return newContractErrResponse(internalServerErr, downsUsr + "不是管理员"), errors.New(downsUsr + "不是管理员")
+		} else {
+			return newContractErrResponse(internalServerErr, downsUsr+"不是管理员"), errors.New(downsUsr + "不是管理员")
 		}
 	}
 	// 数据写回
@@ -1043,7 +1044,7 @@ func getHistoryMsg(ctx contract.KContext, name string) (History, error) {
 	historyMsg := History{
 		Name: name,
 	} // 历史消息记录，get不到的话说明是第一次赋值
-	historyBytes, _ := ctx.Get(ParaChainKernelContract, []byte(historyMsgPrefix + historyMsg.Name))
+	historyBytes, _ := ctx.Get(ParaChainKernelContract, []byte(historyMsgPrefix+historyMsg.Name))
 	if historyBytes != nil {
 		err := json.Unmarshal(historyBytes, &historyMsg)
 		if err != nil {
@@ -1112,12 +1113,12 @@ func (p *paraChainContract) getHistory(ctx contract.KContext) (*contract.Respons
 	// 对邀请/申请表中result为1的数据进行判断，超过一定时间的视为过期，置为4再返回（但并不修改记录）
 	for i, invite := range historyMsg.Invites {
 		// 增加了.Result==1的判断，对已经处理的消息（2-通过/3-拒绝）直接跳过，避免了第二个条件调用time运算（算是节约了一点点点点时间）
-		if invite.Result == 1 && nowTime - invite.When >= expiredLimit {
+		if invite.Result == 1 && nowTime-invite.When >= expiredLimit {
 			historyMsg.Invites[i].Result = 04 // expired
 		}
 	}
 	for i, apply := range historyMsg.Applies {
-		if apply.Result == 1 && nowTime - apply.When >= expiredLimit {
+		if apply.Result == 1 && nowTime-apply.When >= expiredLimit {
 			historyMsg.Applies[i].Result = 04 // expired
 		}
 	}
@@ -1181,7 +1182,7 @@ func removeItem(items []string, item string) ([]string, bool) {
 	flag := false
 	for index, eachItem := range items {
 		if eachItem == item {
-			if index == len(items) - 1 { // 刚好是切片中的最后一个元素
+			if index == len(items)-1 { // 刚好是切片中的最后一个元素
 				items = append(items[:index])
 				flag = true
 				break

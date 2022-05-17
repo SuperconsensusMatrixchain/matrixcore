@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge"
 	"github.com/hyperledger/burrow/execution/evm/abi"
 	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge"
 )
 
 func TestEvmCodeKey(t *testing.T) {

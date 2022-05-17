@@ -3,9 +3,9 @@ package chained_bft
 import (
 	"errors"
 
-	cCrypto "github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/crypto"
-	"github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/storage"
-	"github.com/superconsensus/matrixcore/lib/logs"
+	cCrypto "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/crypto"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/storage"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 )
 
 const (

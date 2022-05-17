@@ -7,7 +7,7 @@
  * DESCRIPTION
  * Usage:
  * import (
- *	   "github.com/superconsensus/matrixcore/lib/cache"
+ *	   "github.com/SuperconsensusMatrixchain/matrixcore/lib/cache"
  * )
  * // Create lru cache
  * cache := common.NewLRUCache(10000)

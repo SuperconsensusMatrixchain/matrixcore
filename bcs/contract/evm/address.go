@@ -8,9 +8,9 @@ import (
 	"github.com/hyperledger/burrow/binary"
 	"github.com/hyperledger/burrow/crypto"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/utils"
-	"github.com/superconsensus/matrixcore/lib/crypto/hash"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/utils"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/crypto/hash"
 )
 
 const (

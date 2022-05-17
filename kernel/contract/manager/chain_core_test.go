@@ -11,11 +11,11 @@ import (
 	"strings"
 	"testing"
 
+	_ "github.com/SuperconsensusMatrixchain/matrixcore/bcs/contract/native"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	_ "github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/kernel"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/mock"
 	log15 "github.com/xuperchain/log15"
-	_ "github.com/superconsensus/matrixcore/bcs/contract/native"
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	_ "github.com/superconsensus/matrixcore/kernel/contract/kernel"
-	"github.com/superconsensus/matrixcore/kernel/contract/mock"
 )
 
 const (

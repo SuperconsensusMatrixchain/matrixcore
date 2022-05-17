@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"math/big"
 
-	xledger "github.com/superconsensus/matrixcore/bcs/ledger/xledger/ledger"
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/contract/proposal/utils"
+	xledger "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/ledger"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/proposal/utils"
 )
 
 type KernMethod struct {

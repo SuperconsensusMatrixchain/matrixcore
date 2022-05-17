@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	common "github.com/superconsensus/matrixcore/kernel/consensus/base/common"
-	"github.com/superconsensus/matrixcore/kernel/consensus/context"
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/lib/logs"
+	common "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 )
 
 // xpoaSchedule 实现了ProposerElectionInterface接口，接口定义了validators操作

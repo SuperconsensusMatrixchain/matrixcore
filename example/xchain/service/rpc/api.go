@@ -4,11 +4,11 @@ import (
 	"context"
 	"math/big"
 
-	sctx "github.com/superconsensus/matrixcore/example/xchain/common/context"
-	pb "github.com/superconsensus/matrixcore/example/xchain/common/xchainpb"
-	"github.com/superconsensus/matrixcore/example/xchain/models"
-	ecom "github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
-	"github.com/superconsensus/matrixcore/lib/utils"
+	sctx "github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/context"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/xchainpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/models"
+	ecom "github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/utils"
 )
 
 // 注意：

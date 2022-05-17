@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
 )
 
 type shortcut struct {

@@ -5,13 +5,13 @@ import (
 	"errors"
 	"testing"
 
-	xctx "github.com/superconsensus/matrixcore/kernel/common/xcontext"
-	"github.com/superconsensus/matrixcore/kernel/mock"
-	nctx "github.com/superconsensus/matrixcore/kernel/network/context"
-	"github.com/superconsensus/matrixcore/kernel/network/def"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	"github.com/superconsensus/matrixcore/lib/timer"
-	pb "github.com/superconsensus/matrixcore/protos"
+	xctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xcontext"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/mock"
+	nctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/network/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/network/def"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/timer"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 type mockStream struct{}

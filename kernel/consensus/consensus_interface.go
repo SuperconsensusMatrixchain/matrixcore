@@ -1,8 +1,8 @@
 package consensus
 
 import (
-	"github.com/superconsensus/matrixcore/kernel/common/xcontext"
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xcontext"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
 )
 
 // ConsensusInterface 定义了一个共识实例需要实现的接口，用于kernel外的调用

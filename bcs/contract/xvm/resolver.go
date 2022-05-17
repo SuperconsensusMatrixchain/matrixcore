@@ -5,8 +5,8 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge/memrpc"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/memrpc"
 	"github.com/xuperchain/xvm/exec"
 )
 

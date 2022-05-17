@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/superconsensus/matrixcore/kernel/common/xcontext"
-	"github.com/superconsensus/matrixcore/kernel/consensus"
-	"github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/kernel/consensus/def"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xcontext"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/def"
 )
 
 var (

@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/superconsensus/matrixcore/kernel/mock"
-	_ "github.com/superconsensus/matrixcore/lib/storage/kvdb/leveldb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/mock"
+	_ "github.com/SuperconsensusMatrixchain/matrixcore/lib/storage/kvdb/leveldb"
 )
 
 func TestCreateLedger(t *testing.T) {

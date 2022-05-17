@@ -1,8 +1,8 @@
 package rule
 
 import (
-	"github.com/superconsensus/matrixcore/kernel/permission/acl/ptree"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/permission/acl/ptree"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 
 	"testing"
 )

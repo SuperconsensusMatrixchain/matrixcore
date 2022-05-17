@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
+	bmock "github.com/SuperconsensusMatrixchain/matrixcore/bcs/consensus/mock"
+	lpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/def"
+	kmock "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/mock"
 	"github.com/golang/protobuf/proto"
-	bmock "github.com/superconsensus/matrixcore/bcs/consensus/mock"
-	lpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/kernel/consensus/def"
-	kmock "github.com/superconsensus/matrixcore/kernel/consensus/mock"
 )
 
 func TestUnmarshalConfig(t *testing.T) {

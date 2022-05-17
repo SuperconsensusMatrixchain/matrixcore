@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strconv"
 
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	"github.com/golang/protobuf/proto"
-	"github.com/superconsensus/matrixcore/protos"
 )
 
 var _ Topic = (*BlockTopic)(nil)

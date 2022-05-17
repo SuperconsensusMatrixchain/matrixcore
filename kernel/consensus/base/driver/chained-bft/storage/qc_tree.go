@@ -6,9 +6,9 @@ import (
 	"errors"
 	"sync"
 
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	"github.com/superconsensus/matrixcore/lib/utils"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/utils"
 )
 
 type ProposalNode struct {

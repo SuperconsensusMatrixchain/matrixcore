@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/superconsensus/matrixcore/kernel/consensus/mock"
-	kmock "github.com/superconsensus/matrixcore/kernel/consensus/mock"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/mock"
+	kmock "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/mock"
 )
 
 var nominate_key = "tdpos_0_nominate"

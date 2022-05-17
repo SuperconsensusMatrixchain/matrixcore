@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 func TestBlockTopicBasic(t *testing.T) {

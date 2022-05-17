@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 	"github.com/xuperchain/crypto/core/hash"
 
 	"github.com/golang/protobuf/proto"

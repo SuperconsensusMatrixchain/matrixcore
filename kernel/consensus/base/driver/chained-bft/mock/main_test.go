@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/storage"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/storage"
 )
 
 func TestUpdateHighQC(t *testing.T) {

@@ -1,8 +1,8 @@
 package consensus
 
 import (
-	cctx "github.com/superconsensus/matrixcore/kernel/consensus/context"
-	"github.com/superconsensus/matrixcore/kernel/consensus/def"
+	cctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/def"
 )
 
 var consensusMap = make(map[string]NewStepConsensus)

@@ -3,8 +3,8 @@ package xuperos
 import (
 	"errors"
 
+	lpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
 	"github.com/golang/protobuf/proto"
-	lpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
 )
 
 var (

@@ -5,8 +5,8 @@ package xpb
 
 import (
 	fmt "fmt"
+	xldgpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
 	proto "github.com/golang/protobuf/proto"
-	xldgpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
 	math "math"
 )
 

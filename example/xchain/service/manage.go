@@ -3,11 +3,11 @@ package service
 import (
 	"fmt"
 
-	sconf "github.com/superconsensus/matrixcore/example/xchain/common/config"
-	"github.com/superconsensus/matrixcore/example/xchain/common/def"
-	"github.com/superconsensus/matrixcore/example/xchain/service/rpc"
-	"github.com/superconsensus/matrixcore/kernel/engines"
-	"github.com/superconsensus/matrixcore/lib/logs"
+	sconf "github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/config"
+	"github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/common/def"
+	"github.com/SuperconsensusMatrixchain/matrixcore/example/xchain/service/rpc"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 )
 
 // 由于需要同时启动多个服务组件，采用注册机制管理

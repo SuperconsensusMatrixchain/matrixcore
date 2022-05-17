@@ -3,10 +3,10 @@ package manager
 import (
 	"testing"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	_ "github.com/superconsensus/matrixcore/kernel/contract/kernel"
-	"github.com/superconsensus/matrixcore/kernel/contract/mock"
-	"github.com/superconsensus/matrixcore/kernel/contract/sandbox"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	_ "github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/kernel"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/mock"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/sandbox"
 )
 
 var contractConfig = &contract.ContractConfig{

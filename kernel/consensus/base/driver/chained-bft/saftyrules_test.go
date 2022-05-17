@@ -3,9 +3,9 @@ package chained_bft
 import (
 	"testing"
 
-	cCrypto "github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/crypto"
-	"github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/mock"
-	chainedBftPb "github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
+	cCrypto "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/crypto"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/mock"
+	chainedBftPb "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
 )
 
 func TestCalVotesThreshold(t *testing.T) {

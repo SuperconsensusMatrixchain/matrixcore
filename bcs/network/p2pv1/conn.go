@@ -7,16 +7,16 @@ import (
 	"sync"
 	"time"
 
-	xctx "github.com/superconsensus/matrixcore/kernel/common/xcontext"
+	xctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xcontext"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/connectivity"
 
-	"github.com/superconsensus/matrixcore/kernel/network/config"
-	nctx "github.com/superconsensus/matrixcore/kernel/network/context"
-	"github.com/superconsensus/matrixcore/kernel/network/p2p"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	pb "github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/network/config"
+	nctx "github.com/SuperconsensusMatrixchain/matrixcore/kernel/network/context"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/network/p2p"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 type Conn struct {

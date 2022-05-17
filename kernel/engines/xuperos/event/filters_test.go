@@ -3,8 +3,8 @@ package event
 import (
 	"testing"
 
-	lpb "github.com/superconsensus/matrixcore/bcs/ledger/xledger/xldgpb"
-	"github.com/superconsensus/matrixcore/protos"
+	lpb "github.com/SuperconsensusMatrixchain/matrixcore/bcs/ledger/xledger/xldgpb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 func expectTxMatch(t *testing.T, tx *lpb.Transaction, pbfilter *protos.BlockFilter) {

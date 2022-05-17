@@ -3,7 +3,7 @@ package storage
 import (
 	"errors"
 
-	pb "github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
 )
 
 var _ QuorumCertInterface = (*QuorumCert)(nil)

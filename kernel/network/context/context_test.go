@@ -3,7 +3,7 @@ package context
 import (
 	"testing"
 
-	"github.com/superconsensus/matrixcore/kernel/mock"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/mock"
 )
 
 func TestNewNetCtx(t *testing.T) {

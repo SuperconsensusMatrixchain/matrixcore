@@ -45,7 +45,7 @@ sh ./control.sh start
 
 # 参与贡献
 
-https://github.com/superconsensus/matrixcore
+https://github.com/SuperconsensusMatrixchain/matrixcore
 
 如果你遇到问题或需要新功能，欢迎到xupercore创建issue。
 

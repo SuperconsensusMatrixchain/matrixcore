@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge/pb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pb"
 
-	"github.com/superconsensus/matrixcore/kernel/common/xconfig"
-	"github.com/superconsensus/matrixcore/kernel/ledger"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/common/xconfig"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/ledger"
 )
 
 var (

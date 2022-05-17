@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	chainedBftPb "github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
-	"github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/storage"
-	"github.com/superconsensus/matrixcore/kernel/mock"
-	"github.com/superconsensus/matrixcore/lib/logs"
-	"github.com/superconsensus/matrixcore/lib/utils"
+	chainedBftPb "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/storage"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/mock"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/utils"
 )
 
 var (

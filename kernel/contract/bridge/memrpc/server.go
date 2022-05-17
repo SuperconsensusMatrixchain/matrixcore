@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"reflect"
 
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pb"
 	"github.com/golang/protobuf/proto"
-	pb "github.com/superconsensus/matrixcore/kernel/contract/bridge/pb"
 )
 
 var (

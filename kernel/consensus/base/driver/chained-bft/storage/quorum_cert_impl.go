@@ -1,7 +1,7 @@
 package storage
 
 import (
-	pb "github.com/superconsensus/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
+	pb "github.com/SuperconsensusMatrixchain/matrixcore/kernel/consensus/base/driver/chained-bft/pb"
 )
 
 // quorumCert 是HotStuff的基础结构，它表示了一个节点本地状态以及其余节点对该状态的确认

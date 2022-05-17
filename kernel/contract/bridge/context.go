@@ -3,11 +3,11 @@ package bridge
 import (
 	"sync"
 
-	"github.com/superconsensus/matrixcore/lib/logs"
+	"github.com/SuperconsensusMatrixchain/matrixcore/lib/logs"
 
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/contract/bridge/pb"
-	"github.com/superconsensus/matrixcore/protos"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract/bridge/pb"
+	"github.com/SuperconsensusMatrixchain/matrixcore/protos"
 )
 
 // Context 保存了合约执行的内核状态，

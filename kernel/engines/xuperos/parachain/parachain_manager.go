@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/contract"
+	"github.com/SuperconsensusMatrixchain/matrixcore/kernel/engines/xuperos/common"
 	"github.com/spf13/viper"
-	"github.com/superconsensus/matrixcore/kernel/contract"
-	"github.com/superconsensus/matrixcore/kernel/engines/xuperos/common"
 )
 
 const (
@@ -46,21 +46,21 @@ func NewParaChainManager(ctx *ParaChainCtx) (*Manager, error) {
 		"getGroup":    t.getGroup,
 		"stopChain":   t.stopChain,
 		// 创链者管理管理员（参数可批量）
-		"adminManage":		t.adminManage,
+		"adminManage": t.adminManage,
 		// 管理员邀请加入（参数可批量）
-		"inviteMembers":	t.inviteMembers,
+		"inviteMembers": t.inviteMembers,
 		// 处理邀请，同意/拒绝
-		"inviteHandle":		t.inviteHandle,
+		"inviteHandle": t.inviteHandle,
 		// 管理员剔除成员（参数可批量）
-		"removeMembers":	t.removeMembers,
+		"removeMembers": t.removeMembers,
 		// 申请加入
-		"joinApply":		t.joinApply,
+		"joinApply": t.joinApply,
 		// 管理员对加入申请处理（参数可批量）
-		"joinHandle":		t.joinHandle,
+		"joinHandle": t.joinHandle,
 		// 主动退出
-		"exitChain":		t.exitChain,
+		"exitChain": t.exitChain,
 		// 查询历史邀请申请消息
-		"getHistory":  t.getHistory,
+		"getHistory": t.getHistory,
 		// 清理过期邀请/申请消息
 		//"cleanExpiration":  t.cleanExpiration,
 	}
