@@ -206,7 +206,13 @@ func (t *Chain) PreExec(ctx xctx.XContext, reqs []*protos.InvokeRequest, initiat
 		metrics.ContractInvokeCounter.WithLabelValues(t.ctx.BCName, req.ModuleName, req.ContractName, req.MethodName, "OK").Inc()
 		resourceUsed := context.ResourceUsed()
 		if i >= len(reservedRequests) {
-			gasUsed += resourceUsed.TotalGas(gasPrice)
+			blk, _ := t.ctx.Ledger.QueryBlock(t.ctx.State.GetLatestBlockid())
+			height := blk.Height
+			if height < 5733760 {
+				gasUsed += resourceUsed.TotalGas(gasPrice)
+			}else {
+				gasUsed += resourceUsed.TotalGasUp(gasPrice)
+			}
 		}
 
 		// request

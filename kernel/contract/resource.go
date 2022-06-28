@@ -23,6 +23,16 @@ func (l *Limits) TotalGas(gasPrice *protos.GasPrice) int64 {
 	return cpuGas + memGas + diskGas + feeGas
 }
 
+func (l *Limits) TotalGasUp(gasPrice *protos.GasPrice) int64 {
+	cpuGas := roundup(l.Cpu, gasPrice.GetCpuRate())
+	memGas := roundup(l.Memory, gasPrice.GetMemRate())
+	diskGas := roundup(l.Disk, gasPrice.GetDiskRate())
+	feeGas := roundup(l.XFee, gasPrice.GetXfeeRate())
+	// 只对前三项和*1w，避免系统级合约（xkernel）也上调
+	res := (cpuGas + memGas + diskGas)*10000 + feeGas
+	return res
+}
+
 // Add accumulates resource limits, returns self.
 func (l *Limits) Add(l1 Limits) *Limits {
 	l.Cpu += l1.Cpu

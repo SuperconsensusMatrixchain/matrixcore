@@ -688,7 +688,12 @@ func (t *State) verifyTxRWSets(tx *pb.Transaction) (bool, error) {
 	for i, tmpReq := range tx.GetContractRequests() {
 		limits := contract.FromPbLimits(tmpReq.GetResourceLimits())
 		if i >= len(reservedRequests) {
-			gasLimit -= limits.TotalGas(gasPrice)
+			// 上链交易校验：gas计算
+			if t.heightNotifier.height < 5733760 {
+				gasLimit -= limits.TotalGas(gasPrice)
+			} else {
+				gasLimit -= limits.TotalGasUp(gasPrice)
+			}
 		}
 		if gasLimit < 0 {
 			t.log.Error("virifyTxRWSets error:out of gas", "contractName", tmpReq.GetContractName(),
